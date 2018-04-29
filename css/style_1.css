@@ -1,0 +1,14 @@
+h1 {
+    font-size: 200%;
+}
+
+h2 {
+    line-height: 200%;
+}
+h3,p {
+    line-height: 50%;
+    font-size: 100%;
+}
+h3 {
+    font-style: bold;
+}
