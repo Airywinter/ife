@@ -1,0 +1,10 @@
+div{
+    border:1px solid purple;
+  }
+  #left{
+    width: 30%;
+    float: left;
+  }
+  #right{
+    margin-left: 30%;
+  }

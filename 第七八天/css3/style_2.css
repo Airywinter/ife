@@ -1,0 +1,15 @@
+body{
+  font-size: 0px;
+}
+div{
+  border: 1px solid purple;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 20px;
+}
+#left{
+  width: calc(100% - 500px);
+}
+#right{
+  width: 500px;
+}

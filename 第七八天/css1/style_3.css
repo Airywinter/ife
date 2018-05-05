@@ -1,0 +1,12 @@
+body{
+    display: flex;;
+ }
+ div{
+   border:1px solid purple;
+ }
+ #left{
+   flex: 3;
+ }
+ #right{
+   flex: 7;
+ }

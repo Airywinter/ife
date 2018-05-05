@@ -1,0 +1,11 @@
+div{
+  border:1px solid purple;
+  
+}
+#left{
+  width: 500px;
+  position: absolute;
+}
+#right{
+  margin-left: 500px;
+}

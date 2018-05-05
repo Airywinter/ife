@@ -1,0 +1,15 @@
+body{
+  display: flex;
+}
+div{
+  border: 1px solid purple;
+}
+#left{
+  flex: 0 auto;
+}
+#middle{
+  flex: 1 auto;
+}
+#right{
+  flex: 0 auto;
+}

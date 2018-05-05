@@ -1,0 +1,14 @@
+/*利用float消除HTML中的空格*/
+
+div{
+    border:1px solid purple;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+  #left{
+    width: 30%;
+  }
+  #right{
+    width: 70%;
+    float: right;
+  }

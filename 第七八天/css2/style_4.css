@@ -1,0 +1,12 @@
+body{
+  display: flex;
+}
+div{
+  border: 1px solid black;
+}
+#left{
+  flex: 0 0 auto;
+}
+#right{
+  flex: 1 1 auto;
+}

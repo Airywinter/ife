@@ -1,0 +1,18 @@
+body{
+  font-size: 0px;
+}
+div{
+  border: 1px solid purple;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size:20px;
+}
+#left{
+  width: 200px;
+}
+#middle{
+  width: calc(100% - 400px);
+}
+#right{
+  width: 200px;
+}

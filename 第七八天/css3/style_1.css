@@ -1,0 +1,12 @@
+div{
+  border: 1px solid purple;
+  box-sizing: border-box;
+}
+#left{
+  width: calc(100% - 500px);
+  float: left;
+}
+#right{
+  width: 500px;
+  float: right;
+}
