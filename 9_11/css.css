@@ -1,0 +1,340 @@
+/*page1*/
+#page1{
+    width: 1600px;
+    height: 989px;
+    background-image: url(img/page1-Background.png);
+    color: white;
+    text-align: center;
+}
+#page1 h1,p{
+    font-style: Montserrat;
+}
+#page1 h1{
+    font-size: 62px;
+    font-weight: lighter;
+    padding-top: 210px;
+    padding-bottom: 88px;
+    margin: 0px;
+}
+#page1 p{
+    font-size: 20px;
+    font-weight: lighter;
+    color: gray;
+    padding-top: 0px;
+    width: 767px;
+    margin: auto;
+}
+.signup{
+    width: 967px;
+    height: 249px;
+    border: 1px solid gray;
+    margin: auto;
+    margin-top: 105px;
+}
+#page1 .signup h2{
+    font-size: 16px;
+    font-weight: lighter;
+    margin-top: 60px;
+    margin-bottom: 15px;
+}
+#page1 .signup p{
+    font-size: 12px;
+    font-weight: lighter;
+    margin-bottom: 45px;
+}
+#page1 .signup form input:first-child,#page1 .signup form input:nth-child(2){
+    width: 292px;
+    height: 49px;
+    margin-right: 30px;
+    padding-left: 20px;
+    background-color: transparent;
+    border: 1px solid gray;
+}
+#page1 .signup form button{
+    width: 125px;
+    height: 49px;
+    border: 0px;
+    padding: 0px;
+}
+
+/*page2*/
+#page2{
+    width: 1600px;
+    height: 712px;
+    text-align: center;
+}
+#page2 >p{
+    font-size: 14px;
+    margin-top: 91px;
+    margin-bottom: 0px;
+}
+#page2 >h1{
+    font-size: 42px;
+    font-weight: lighter;
+    width: 692px;
+    margin: auto;
+    margin-top: 43px;
+}
+#page2 .parts{
+    display: flex;
+    width: 1200px;
+    margin: auto;
+    margin-top: 88px;
+    flex-wrap: wrap;
+}
+#page2 .parts .part{
+    width: 420px;
+    height: 81px;
+    text-align: left;
+    margin-bottom: 84px;
+    margin-right: 90px;
+    margin-left: 90px;
+}
+#page2 .parts .part img{
+    float: left;
+    margin-bottom: 63px;
+    margin-right: 33px;
+}
+#page2 .parts .part:nth-child(3) img{
+    margin-right: 18px;
+}
+#page2 .parts .part:nth-child(4) img{
+    margin-right: 27px;
+}
+#page2 .parts .part h2{
+    font-size: 20px;
+    margin: 0px;
+}
+#page2 .parts .part p{
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+/*page3*/
+#page3{
+    width: 1600px;
+    height: 800px;
+    background-image: url(img/Background2.png);
+    position: relative;
+}
+#page3 .page3-text{
+    float: left;
+    color: white;
+    width: 374px;
+    margin-top: 185px;
+    margin-left: 319px;
+}
+#page3 .page3-text h1{
+    font-size: 42px;
+    font-weight: lighter;
+    margin: 0px;
+}
+#page3 .page3-text p{
+    font-size: 18px;
+    font-weight: lighter;
+}
+#page3 .button{
+    position: absolute;
+    left: 319px;
+    top: 555px;
+}
+#page3 .button button{
+    width: 241px;
+    height: 62px;
+}
+#page3 button:nth-child(2){
+    background-color: transparent;
+    color: white;
+    margin-left: 31px;
+}
+
+/*page4*/
+#page4{
+    width: 1600px;
+    height: 580px;
+    border-bottom: 1px solid #C0C0C0;
+    text-align: center;
+}
+#page4 h1{
+    font-size: 42px;
+    font-weight: lighter;
+    margin: 0px;
+    padding-top: 102px;
+    padding-bottom: 87px;
+}
+#page4 p{
+    font-size: 16px;
+    font-weight: lighter;
+}
+#page4 .page4-text{
+    width: 1032px;
+    margin: auto;
+}
+#page4 .page4-text div{
+    float: left;
+    width: 251px;
+    padding-right: 46px;
+    padding-left: 46px;
+}
+
+/*page5*/
+#page5{
+    width: 1600px;
+    height: 1000px;
+    border-bottom: 1px solid #C0C0C0;
+}
+#page5 .page5-img1 img{
+    float: left;
+    margin-right: 100px;
+}
+#page5 .page5-img2 img{
+    float: right;
+    margin-left: 100px;
+}
+#page5 .page5-img1{
+    clear: both;
+    width: 975px;
+    margin: auto;
+    margin-bottom: 97px;
+    margin-top: 115px;
+}
+#page5 .page5-img2{
+    clear: both;
+    width: 975px;
+    margin: auto;
+    margin-bottom: 97px;
+    margin-top: 200px;
+}
+#page5 h1{
+    font-size: 20px;
+    margin: 0px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+#page5 p{
+    font-size: 16px;
+    font-weight: lighter;
+    margin: 0px;
+}
+
+/*page6*/
+#page6{
+    width: 1600px;
+    height: 1083px;
+    border-bottom: 1px solid #C0C0C0;
+    text-align: center;
+}
+#page6 h1{
+    font-size: 42px;
+    font-weight: lighter;
+    margin-top: 70px;
+}
+#page6 p{
+    font-size: 18px;
+    font-weight: lighter;
+    margin-bottom: 50px;
+}
+#page6 .page6-person{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    margin: auto;
+}
+#page6 .page6-person .person{
+    margin: 15px;
+}
+#page6 .page6-person .person1{
+    margin: 15px;
+    width: 470px;
+    height: 340px;
+    background: url(img/person1.png); 
+    position: relative;
+}
+#page6 .page6-person .person1 .img1{
+    display: none;
+}
+#page6 .page6-person .person1:hover p{
+    padding-top:90px; 
+    text-align: center;
+    color: white;
+}
+#page6 .page6-person .person1:hover .img1{
+    width: 100%; 
+    height: 100%; 
+    display: block; 
+    background: #000; 
+    opacity: .5; 
+    filter:alpha(opacity=50); 
+    position: absolute; 
+    top: 0; 
+    left: 0;
+}
+
+/*page7*/
+#page7{
+    width: 1600px;
+    height: 700px;
+    position: relative;
+}
+#page7 .form{
+    width: 470px;
+    height: 560px;
+    border: 1px solid #C0C0C0;
+    text-align: center;
+    margin-top: 73px;
+    margin-left: 314px;
+}
+#page7 .form p{
+    font-size: 16px;
+    margin: 50px;
+}
+#page7 .form input{
+    width: 370px;
+    height: 50px;
+    color: #C0C0C0;
+    margin-bottom: 30px;
+}
+#page7 .form button{
+    color: white;
+    width: 370px;
+    height: 50px;
+    background-color: black;
+}
+#page7 .form input:nth-child(4){
+    height: 143px;
+}
+#page7 .contact{
+    position: absolute;
+    right: 320px;
+    top: 50px;
+    width: 380px;
+}
+#page7 .contact h1{
+    font-size: 42px;
+    font-weight: lighter;
+}
+#page7 .contact .introduce{
+    font-weight: lighter;
+    margin-bottom: 50px;
+}
+#page7 .contact .contacts{
+    margin-top: 30px;
+}
+#page7 .contact .contacts img{
+    float: left;
+}
+#page7 .contact .contacts p{
+    margin-left: 50px;
+}
+
+/*footer*/
+footer{
+    width: 1600px;
+    height: 407px;
+    background-color: black;
+    text-align: center;
+    color: white;
+}
+footer p{
+    padding-top: 100px;
+}
