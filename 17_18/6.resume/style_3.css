@@ -1,0 +1,35 @@
+h1 {
+    color: #FFFFFF;
+    text-align: left;
+    background-color: #808080;
+    padding: 25px;
+    font-size: 200%;
+    margin: 0px;
+}
+body {
+    width: 1200px;
+    margin: 0px auto;
+}
+div {
+    line-height: 50%;
+    width: 85%;
+    border: 1px solid #D3D3D3;
+    height: 150px;
+    padding-left: 30px;
+    display: inline-block;
+}
+h2 {
+    float: left;
+    margin: 0px;
+    text-align: center;
+    background-color: #D3D3D3;
+    width: 12%;
+    height: 150px;
+    border: 1px solid #FFFFFF;
+    line-height: 150px;
+}
+button {
+    margin-top: 30px;
+    height: 50px;
+    font-size: 20px;
+}

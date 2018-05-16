@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            for(var i=1;i<101;i++){
+                if(judge(i)) console.log("PA");
+                else console.log(i);
+            }
+            function judge(a){
+                if(a%3 == 0) return true;
+                else if(a%10==3 || parseInt(a/10)==3) return true;
+                else return false;
+            }
+        </script>
+    </body>
+</html>
