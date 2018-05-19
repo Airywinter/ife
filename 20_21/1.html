@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+<input id="name" type="text">    
+<button id="submit-btn">Submit</button>
+<script>
+       var a = document.getElementById("name");
+       document.getElementById("submit-btn").onclick = function outflow(){
+           console.log(a.value);
+       }
+       document.onkeydown = function whichkey(){
+           if(event.keyCode == 13)  console.log(a.value);
+           else if(event.keyCode == 27)  a.value = null;
+       }
+</script>
+</body>
+</html>
