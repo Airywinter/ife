@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+    <style type="text/css">
+    div {
+        background-image: url("http://ife.baidu.com/2016/static/img/erik_ce204002.jpg");
+        width: 480px;
+        height: 480px;
+    }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector("div");
+        var y = 0;
+        var step = -480;
+        var timer = setInterval(function(){
+            y = y + step;
+            if(y == -7680 || y == 0) {
+			step = -step;
+		}
+            div.style.backgroundPositionY = y + "px";
+        },100);
+    </script>
+</body>
+</html>
