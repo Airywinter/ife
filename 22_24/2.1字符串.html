@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>
+<div>
+    <label>String A:
+        <input id="radio-a" type="radio" checked="true" name="str-obj" value="a">
+    </label>
+    <textarea id="str-a"></textarea>
+    <label>String B:
+        <input id="radio-b" type="radio" name="str-obj" value="b">
+    </label>
+    <textarea id="str-b"></textarea>        
+    <label>Num A：<input id="num-a" type="number" value="0"></label>
+    <label>Num B：<input id="num-b" type="number" value="1"></label>
+</div>
+<div id="button">
+    <button id="1">获取当前选中输入的内容长度</button>
+    <button id="2">当前选中输入中的第3个字符</button>
+    <button id="3">把两个输入框的文字连接在一起输出（concat）</button>
+    <button id="4">输入B中的内容，在输入A的内容中第一次出现的位置（indexOf）</button>
+    <button id="5">输入A中的内容，在输入B的内容中最后一次出现的位置（lastIndexOf）</button>
+    <button id="6">使用slice获取选中输入框内容的部分内容，参数为num-a及num-b</button>
+    <button id="7">当前选中输入框的行数</button>
+    <button id="8">使用substr获取选中输入框内容的子字符串，参数为num-a及num-b</button>
+    <button id="9">把所选输入框中的内容全部转为大写</button>
+    <button id="10">把所选输入框中的内容全部转为小写</button>
+    <button id="11">把所选输入框中内容的半角空格全部去除</button>
+    <button id="12">把所选输入框中内容的a全部替换成另外一个输入框中的内容</button>
+</div>
+<p id="result"></p>
+<script>
+    var strA = document.getElementById("str-a");
+    var strB = document.getElementById("str-b");
+    var numA = document.getElementById("num-a");
+    var numB = document.getElementById("num-b");
+    var radioA = document.getElementById("radio-a");
+    var radioB = document.getElementById("radio-b");
+    var result = document.getElementById("result");
+    var button = document.getElementById("button"); 
+    var str;
+    //事件委托
+    button.onclick = function(){
+        var a = strA.value;
+        var b = strB.value;
+    //判断当前选中的内容
+        if(radioA.checked) str = a;
+        else if(radioB.checked) str = b;
+        else console.log("please choose one");
+    //各个按钮
+        switch(event.target.id){
+            case "1":
+            result.innerHTML = str.length;
+            break;
+            case "2":
+            result.innerHTML = str[2];
+            break;
+            case "3":
+            result.innerHTML = a.concat(b);
+            break;
+            case "4":
+            result.innerHTML = a.indexOf(b);
+            break;
+            case "5":
+            result.innerHTML = a.lastIndexOf(b);
+            break;
+            case "6":
+            result.innerHTML = str.slice(numA.value,numB.value);
+            break;
+            case "7":
+            result.innerHTML = str.split("\n").length;
+            break;
+            case "8":
+            result.innerHTML = str.substr(numA.value,numB.value);
+            break;
+            case "9":
+            result.innerHTML = str.toLocaleUpperCase();
+            break;
+            case "10":
+            result.innerHTML = str.toLocaleLowerCase();
+            break;
+            case "11":
+            result.innerHTML = str.replace(/ /g,"");
+            break;
+            case "12":
+            if(radioA.checked) result.innerHTML = a.replace(/a/g,b);
+            else if(radioB.checked) result.innerHTML = b.replace(/a/g,a);
+            else console.log("please choose one");
+            break;
+        }
+    }
+</script>
+</body>
+</html>

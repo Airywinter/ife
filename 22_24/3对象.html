@@ -1,0 +1,139 @@
+<html>
+    <body>
+        <div id="button" class="btnBox">
+            <button id="1">根据name找到对应的id</button>
+            <button id="2">根据id找到对应的name</button>
+            <button id="3">所有名字前序遍历</button>
+            <button id="4">所有名字中序遍历</button>
+            <button id="5">所有名字后序遍历</button>
+        </div>
+    </body>
+    <script>
+        var tree = {
+    "id": 0,
+    "name": "root",
+    "left": {
+        "id": 1,
+        "name": "Simon",
+        "left": {
+            "id": 3,
+            "name": "Carl",
+            "left": {
+                "id": 7,
+                "name": "Lee",
+                "left": {
+                    "id": 11,
+                    "name": "Fate"
+                }
+            },
+            "right": {
+                "id": 8,
+                "name": "Annie",
+                "left": {
+                    "id": 12,
+                    "name": "Saber"
+                }
+            }
+        },
+        "right": {
+            "id": 4,
+            "name": "Tony",
+            "left": {
+                "id": 9,
+                "name": "Candy"
+            }
+        }
+    },
+    "right": {
+        "id": 2,
+        "name": "right",
+        "left": {
+            "id": 5,
+            "name": "Carl",
+        },
+        "right": {
+            "id": 6,
+            "name": "Carl",
+            "right": {
+                "id": 10,
+                "name": "Kai"
+            }        
+        }
+    }
+}
+
+// 假设id和name均不会重复，根据输入name找到对应的id
+function findIdByName(name) {
+    function traverse(obj){
+        if(!obj) return;
+        if(obj.name == name) return obj.id;
+        else return (traverse(obj.left) || traverse(obj.right));
+    }
+    return traverse(tree);
+}
+
+// 假设id和name均不会重复，根据输入id找到对应的name
+function findNameById(id) {
+    function traverse(obj){
+        if(!obj) return;
+        if(obj.id == id) return obj.name;
+        else return (traverse(obj.left) || traverse(obj.right));
+    }
+    return traverse(tree);
+}
+
+// 把这个对象中所有的名字以“前序遍历”的方式全部输出到console中
+function getListWithDLR() {
+    function traverse(obj){
+        console.log(obj.name);
+        if(obj.left) traverse(obj.left);
+        if(obj.right) traverse(obj.right);
+    }
+    console.log(traverse(tree));
+}
+
+// 把这个对象中所有的名字以“中序遍历”的方式全部输出到console中
+function getListWithLDR() {
+    function traverse(obj){
+        if(obj.left) traverse(obj.left);
+        console.log(obj.name);
+        if(obj.right) traverse(obj.right);
+    }
+    console.log(traverse(tree));
+}
+
+// 把这个对象中所有的名字以“后序遍历”的方式全部输出到console中
+function getListWithLRD() {
+    function traverse(obj){
+        if(obj.left) traverse(obj.left);
+        if(obj.right) traverse(obj.right);
+        console.log(obj.name);
+    }
+    console.log(traverse(tree));
+}
+
+var button = document.getElementById("button");
+button.onclick = function(){
+    var target = event.target;
+    switch(target.id){
+        case "1":
+        console.log(findIdByName("Tony"));
+        console.log(findIdByName("Lee"));
+        break;
+        case "2":
+        console.log(findNameById(7));
+        console.log(findNameById(4));
+        break;
+        case "3":
+        getListWithDLR();
+        break;
+        case "4":
+        getListWithLDR();
+        break;
+        case "5":
+        getListWithLRD();
+        break;
+    }
+}
+    </script>
+</html>
