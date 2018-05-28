@@ -1,0 +1,58 @@
+<html>
+    <body  onload="startTime()">
+        <p id="text"></p>
+   
+    <script>
+
+        function startTime(){
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var week = weekday();
+            var day = date.getDate();
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+            mon = checkTime(month);
+            d = checkTime(day);
+            h = checkTime(hour);
+            m = checkTime(min);
+            s = checkTime(sec);
+            var time = showTime(year,mon,week,d,h,m,s);
+            document.getElementById("text").innerHTML = time;
+            setTimeout("startTime()",500);
+        }
+
+    function weekday(){
+        var arr = [];
+        arr[0] = "Monday";
+        arr[1] = "Tuesday";
+        arr[2] = "Wednesday";
+        arr[3] = "Thursady";
+        arr[4] = "Friday";
+        arr[5] = "Saturday";
+        arr[6] = "Sunday";
+        var date = new Date();
+        var temp = date.getDay();
+        var week = arr[temp-1];
+        return week;
+    }
+    function checkTime(n){
+        if(n < 10){
+            n = "0" + n;
+        }
+        return n;
+    }
+    
+    function showTime(year,month,week,day,hour,min,sec){
+        var time;
+        if(hour > 12) {
+            hour = checkTime(hour - 12);
+            time = year + "-" + month + "-" + day + " " + week + " " + hour + ":" + min + ":" + sec + " PM";
+            }
+        else time = year + "-" + month + "-" + day + " " + week + " " + hour + ":" + min + ":" + sec + " AM";
+        return time;
+    }
+    </script>
+     </body>
+</html>

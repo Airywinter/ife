@@ -1,0 +1,52 @@
+<html>
+    <body  onload="startTime()">
+        <p id="text"></p>
+   
+    <script>
+
+        function startTime(){
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth() + 1;
+            var week = weekday();
+            var day = date.getDate();
+            var hour = date.getHours();
+            var min = date.getMinutes();
+            var sec = date.getSeconds();
+            mon = checkTime(month);
+            d = checkTime(day);
+            h = checkTime(hour);
+            m = checkTime(min);
+            s = checkTime(sec);
+            var time = showTime(year,mon,week,d,h,m,s);
+            document.getElementById("text").innerHTML = time;
+            setTimeout("startTime()",500);
+        }
+
+    function weekday(){
+        var arr = [];
+        arr[0] = "星期一";
+        arr[1] = "星期二";
+        arr[2] = "星期三";
+        arr[3] = "星期四";
+        arr[4] = "星期五";
+        arr[5] = "星期六";
+        arr[6] = "星期日";
+        var date = new Date();
+        var temp = date.getDay();
+        var week = arr[temp-1];
+        return week;
+    }
+    function checkTime(n){
+        if(n < 10){
+            n = "0" + n;
+        }
+        return n;
+    }
+    function showTime(year,month,week,day,hour,min,sec){
+        var time = year + "年" + month + "月" + day + "日 " + week + " " + hour + ":" + min + ":" + sec;
+        return time;
+    }
+    </script>
+     </body>
+</html>
