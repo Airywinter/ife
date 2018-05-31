@@ -1,48 +1,117 @@
 <html>
     <body>
-            <select id="year-select">
-                    <option value="2000">2000</option>
-                    <option value="2001">2001</option>
-                    <option value="2002">2002</option>
-                    ……
-                    <option value="2032">2002</option>
-                </select>
-                
-                <select id="month-select">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    ……
-                    <option value="12">12</option>
-                </select>
-                
-                <select id="day-select">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    ……
-                    <option value="31">31</option>
-                </select>
-                
-                <select id="hour-select">
-                    <option value="0">00</option>
-                    <option value="1">01</option>        
-                    ……
-                    <option value="23">23</option>
-                </select>
-                
-                <select id="minite-select">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    ……
-                    <option>59</option>
-                </select>
-                
-                <select id="second-select">
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    ……
-                    <option>59</option>
-                </select>
-                
-                <p id="result-wrapper">现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒</p>
+            <select id="year-select"></select> 
+            <select id="month-select"></select> 
+            <select id="day-select"></select>
+            <select id="hour-select"></select>
+            <select id="minite-select"></select>
+            <select id="second-select"></select>
+            <p id="result-wrapper"></p>
+            
+            <script>
+                var year = document.getElementById("year-select");
+                var month = document.getElementById("month-select");
+                var day = document.getElementById("day-select");
+                var hour = document.getElementById("hour-select");
+                var minite = document.getElementById("minite-select");
+                var second = document.getElementById("second-select");
+                var p = document.getElementById("result-wrapper");
+        /*创造option*/
+                function creatOption(element,start,end){
+                    for(var i=start;i<end;i++){
+                    var option = document.createElement("option");
+                    option.value = i;
+                    option.text = i;
+                    element.appendChild(option);
+                    
+                    }
+                }
+                creatOption(year,2000,2033);
+                creatOption(month,1,13);
+                creatOption(day,1,32);
+                creatOption(hour,0,24);
+                creatOption(minite,0,60);
+                creatOption(second,0,60);
+        /*事件处理*/
+                timeDif();
+                year.onchange = function(){
+                    changeOption();
+                }
+                month.onchange = function(){
+                    changeOption();
+                }
+               
+       
+        /*计算时差*/
+                function timeDif(){
+                    var today = new Date();
+                    var time = getSelectTime();
+                    var diff = today - time;
+                    var dayDiff = Math.floor(Math.abs(diff) / (24 * 60 * 60 * 1000));
+                    var a = Math.floor(Math.abs(diff) % (24 * 60 * 60 * 1000));
+                    var hourDiff = Math.floor(a / (60 * 60 * 1000));
+                    var b = a % (60 * 60 * 1000);
+                    var minuteDiff = Math.floor(b / (60 * 1000));
+                    var secondDiff = Math.round(Math.floor(b % (60 * 1000)) / 1000);
+                    var selectedMonth = time.getMonth()+1;
+                    if(diff > 0){
+                        p.innerHTML = "现在距离" + time.getFullYear() + "年" + selectedMonth + "月" + time.getDate()
+                        + "日 " + weekday(time.getDay()) + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds() +
+                         " 已经过去 " + dayDiff + " 天 " + hourDiff + " 小时 " + minuteDiff + " 分钟 " + secondDiff + " 秒";
+                    }
+                    else {
+                        p.innerHTML = "现在距离" + time.getFullYear() + "年" + selectedMonth + "月" + time.getDate()
+                        + "日" + weekday(time.getDay()) + " " + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds() +
+                        " 还有 " + dayDiff + " 天 " + hourDiff + " 小时 " + minuteDiff + " 分钟 " + secondDiff + " 秒";
+                    }
+                    setTimeout(timeDif,500);
+                }
+        /*获取选择的时间*/
+                function getSelectTime(){
+                    var y = year.value;
+                    var mon = month.value-1;
+                    var d = day.value;
+                    var h = hour.value;
+                    var min = minite.value;
+                    var s = second.value;
+                    return new Date(y,mon,d,h,min,s);
+                }
+        /*动态改变下拉列表选项*/
+                function changeOption(){
+                    day.length = 0;
+                    creatOption(day,1,days()+1);
+                }
+        /*根据平闰年、月份，判断当月天数*/
+                function days(){
+                    var days = 0;
+        /*转化成数字类型!*/
+                    var y = Number(year.value);
+                    var mon = Number(month.value);
+                    switch(mon){
+                        case 1:case 3:case 5:case 7:case 8:case 10:case 12:
+                            days = 31;
+                            break;
+                        case 4:case 6:case 9:case 11:
+                            days = 30;
+                            break;
+                        case 2:
+                            days = (y % 4 == 0 && y % 100 != 0 || y % 400 == 0) ? 29 : 28;
+                            break;
+                    }
+                    return days;
+                }
+                function weekday(day){
+                    var arr = [];
+                    arr[0] = "星期一";
+                    arr[1] = "星期二";
+                    arr[2] = "星期三";
+                    arr[3] = "星期四";
+                    arr[4] = "星期五";
+                    arr[5] = "星期六";
+                    arr[6] = "星期日";
+                    var week = arr[day-1];
+                    return week;
+                 }
+            </script>
     </body>
 </html>
