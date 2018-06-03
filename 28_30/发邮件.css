@@ -1,0 +1,13 @@
+input{
+    width: 150px;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+.newli{
+    background-color: pink;
+}
+.keyli{
+    background-color: paleturquoise;
+}
