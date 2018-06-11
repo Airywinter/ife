@@ -1,0 +1,75 @@
+<html>
+    
+    <?xml version="1.0" standalone="no"?>
+    <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" 
+    "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">     
+    <svg width="100%" height="100%" style="border:1px solid black;" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <line x1="0" y1="0" x2="100" y2="100" style="stroke:thistle"></line>
+        <rect y="200" width="200" height="100" style="fill:thistle;opacity: 0.5;"></rect>
+        <circle cx="200" cy="50" r="50" style="fill: thistle"></circle>
+        <text x="300" y="100" style="font-size: 50px;fill: palevioletred">Hello!</text>
+        <path d="M 400 300 
+        L 300 200 
+        A 50 50 0 1 1 400 150 
+        L 400 300 L 400 150 
+        A 50 50 0 1 1 500 200 
+        L 400 300 L 500 200 
+        A 50 50 0 1 1 550 300 
+        L 400 300 L 550 300 
+        A 50 50 0 1 1 500 400 
+        L 400 300 L 500 400 
+        A 50 50 0 1 1 400 450 
+        L 400 300 L 400 450 
+        A 50 50 0 1 1 300 400 
+        L 400 300 L 300 400 
+        A 50 50 0 1 1 250 300 
+        L 400 300 L 250 300 
+        A 50 50 0 1 1 300 200"
+        style="fill:thistle;stroke:white;stroke-width:2;" ></path>
+    </svg>
+    <canvas id="mycanvas" width="2000" height="500" style="border:1px solid black;">A drawing of something</canvas>
+    <script>
+        var c = document.getElementById("mycanvas");
+        if(c.getContext) var ctx = c.getContext("2d");
+        else console.log(no);
+        ctx.beginPath();
+        ctx.moveTo(0,0);
+        ctx.lineTo(300,400);
+        ctx.stroke();
+
+        ctx.rect(300,0,200,200);
+        ctx.stroke();
+        ctx.fillStyle="green";
+        ctx.fill();
+        ctx.rect(400,100,200,200);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(800,200,100,0,2 * Math.PI);
+        ctx.stroke();
+        ctx.arc(800,200,95,0,2 * Math.PI);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(800,200);
+        ctx.lineTo(800,120);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(800,200);
+        ctx.lineTo(880,200);
+        ctx.stroke();
+        ctx.fillText("12",795,115);
+        ctx.moveTo(1000,250);
+        ctx.arc(1050,250,50,1*Math.PI,1.5*Math.PI);
+        ctx.stroke();
+        ctx.moveTo(1050,200);
+        ctx.arc(1100,200,50,1*Math.PI,2*Math.PI);
+        ctx.stroke();
+        ctx.moveTo(1150,200);
+        ctx.arc(1200,200,50,1*Math.PI,2*Math.PI);
+        ctx.stroke();
+        ctx.moveTo(1250,200);
+        ctx.arc(1250,250,50,1.5*Math.PI,2*Math.PI);
+        ctx.stroke();
+        ctx.lineTo(1000,250);
+        ctx.stroke();
+    </script>
+</html>
