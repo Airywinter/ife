@@ -82,12 +82,18 @@
             this.price = price;
         }
     //测试伪代码
-        var dishes = new Dishes("咖啡",10,20);
+        var dishes = [
+            new Dishes("宫保鸡丁",10,20),
+            new Dishes("火锅鸡",30,40),
+            new Dishes("驴肉火烧",5,9),
+            new Dishes("西红柿炒鸡蛋",5,10)
+            ]
         var customerArr = ["西尾","壁虎","雏实","绚都"];
         for(let i = 0;i < customerArr.length;i++){
             console.log("欢迎" + customerArr[i] + "先生光临");
             let customer = new Customer(customerArr[i]);
-            customer.order(dishes);
+            let temp = Math.ceil(Math.random()*3);
+            customer.order(dishes[temp]);
             customer.eat();
             console.log("欢迎下一位顾客");
             console.log("---------------");
