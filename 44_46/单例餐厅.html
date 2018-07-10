@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <script>
+    //餐厅类
+        function Restaurant(obj){
+            this.cash = obj.cash;
+            this.seats = obj.seats;
+            this.staffList = obj.staff;
+        }
+        Restaurant.prototype.hire = function(staff){
+                this.staffList.push(staff);
+            }
+        Restaurant.prototype.fire = function(staff){
+                for(let i = 0;i < this.staffList.length;i++){
+                    if(this.staffList[i].id == staff.id) this.staffList.splice(i,1);
+                    break;
+                }
+            }
+    //职员类
+        function Staff(id,name,salary){
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+        }
+    //服务员类，继承自职员类
+        function Waiter(id,name,salary){
+            Staff.call(this,id,name,salary);
+
+        }
+        Waiter.prototype = new Staff();
+        Waiter.prototype.constructor = Waiter;
+        Waiter.prototype.order = function(task){
+            console.log("服务员：厨师请做：" + task.name);
+            Cook.getInstance("董香",6000).work(task);
+        }
+        Waiter.prototype.serve = function(task){
+            console.log("服务员：已做完" + task.name + "，这就给顾客送过去");
+        }
+    //普通单例模式
+        Waiter.getInstance = function(name){
+            if(!this.instance) this.instance = new Waiter(name);
+            return this.instance;
+        }
+    //厨师类，继承自职员类
+        function Cook(id,name,salary){
+            Staff.call(this,id,name,salary);
+        }
+        Cook.prototype = new Staff();
+        Cook.prototype.constructor = Cook;
+        Cook.prototype.work = function(task){
+            console.log("厨师：已完成菜品：" + task.name);
+            Waiter.getInstance("金木研",5000).serve(task);
+        }
+    //闭包创建单例模式
+    Cook.getInstance = (function(name) {
+            var instance;
+            return function(name) {
+                if(!instance) {
+                    instance = new Cook(name);
+                }
+                return instance;
+            }
+        })();
+    //顾客类
+        function Customer(name){
+            this.name = name;
+            this.order = function(dishes){
+                console.log("顾客：我点的菜是" + dishes.name);
+                Waiter.getInstance("金木研",5000).order(dishes);
+            };
+            this.eat = function(){
+                console.log("顾客：我吃完啦");
+            }
+        }
+    //菜品类
+        function Dishes(name,cost,price){
+            this.name = name;
+            this.cost = cost;
+            this.price = price;
+        }
+    //测试伪代码
+        var dishes = new Dishes("咖啡",10,20);
+        var customerArr = ["西尾","壁虎","雏实","绚都"];
+        for(let i = 0;i < customerArr.length;i++){
+            console.log("欢迎" + customerArr[i] + "先生光临");
+            let customer = new Customer(customerArr[i]);
+            customer.order(dishes);
+            customer.eat();
+            console.log("欢迎下一位顾客");
+            console.log("---------------");
+        }
+        
+    </script>
+</html>
