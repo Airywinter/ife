@@ -1,0 +1,361 @@
+#left {
+    position: relative;
+    float: left;
+    width: 100px;
+    height: 100%;
+    background-color: rgb(29, 37, 49);
+}
+#left ul {
+    list-style: none;
+}
+#left ul:first-child {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    margin: 0px;
+    padding: 0px;
+    width: 60px;
+    height: 300px;
+}
+#left ul:first-child li {
+    padding-top: 10px;
+}
+#left ul:nth-child(2) {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+    width: 60px;
+    margin: 0px;
+    padding: 0px;
+}
+#left ul:nth-child(2) li {
+    float: left;
+    margin: 0 7px 0 7px;
+}
+
+#middle {
+    position: relative;
+    float: left;
+    width: 250px;
+    height: 100%;
+    background-color: rgb(34, 44, 60);
+    color: rgb(172, 182, 195);
+}
+#middle h1 {
+    font-size: 12px;
+    color: rgb(91, 103, 121);
+}
+#middle p {
+    font-size: 12px;
+}
+#middle div {
+    margin: 0 auto;
+    padding: 10px;
+    width: 200px;
+    border-top: 1px solid rgb(72, 83, 101);
+}
+#middle div h1 img {
+    float: right;
+}
+#middle #YOURPRODUCTS img {
+    float: left;
+}
+#middle #YOURPRODUCTS h1 img {
+    float: right;
+}
+#middle #YOURPRODUCTS p {
+    margin-left: 25px;
+}
+#middle #DASHBOARD #choosen {
+    color: rgb(255, 255, 255);
+}
+#middle #M-bottom {
+    position: absolute;
+    left: 15px;
+    bottom: 0px;
+    border-top: none;
+    width: 200px;
+    color: rgb(255, 255, 255);
+}
+#middle #M-bottom p {
+    float: left;
+    margin: 0 10px 0 10px;
+}
+#middle #M-bottom #bar {
+    float: left;
+    margin-top: 10px;
+    padding: 0px;
+    width: 200px;
+    height: 5px;
+    background-color: rgb(45, 56, 72);
+    border-radius: 10px;
+    border-top: none;
+}
+#middle #M-bottom #barnow {
+    display: inline-block;
+    width: 36px;
+    height: 5px;
+    border-radius: 10px;
+    background: linear-gradient(to right, black, white);
+}
+
+#right {
+    float: right;
+    width: calc(100% - 350px);
+}
+#right header {
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid rgb(230, 233, 236);
+}
+#right header h1 {
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 0;
+    font-weight: normal;
+    color: rgb(53, 64, 82);
+}
+#right header #Administrator{
+    position: relative;
+    float: right;
+    width: 200px;
+    height: 80px;
+}
+#right header #Administrator img:first-child {
+    float: left;
+    margin-top: 15px;
+}
+#right header #Administrator img:nth-child(2) {
+    position: absolute;
+    top: 48px;
+    left: 33px;
+}
+#right header #Administrator p:nth-child(3) {
+    margin-top: 20px;
+    margin-bottom: 0;
+    margin-left: 65px;
+    color: rgb(35, 153, 241);
+}
+#right header #Administrator p:nth-child(4) {
+    margin-top: 0px;
+    margin-left: 60px;
+    color: rgb(201, 201, 201);
+}
+#right #search {
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid rgb(230, 233, 236);
+}
+#right #search #searchLeft {
+    float: left;
+    margin: 0;
+    width: 400px;
+    height: 100%;
+    border-right: 1px solid rgb(230, 233, 236);
+}
+#right #search #searchLeft input {
+    display: block;
+    margin: 15px auto;
+    border: 1px solid rgb(230, 233, 236);
+    border-radius: 5px;
+    width: 350px;
+    height: 40px;
+    color: rgb(178, 186, 200);
+}
+#right #search #searchRight {
+    float: left;
+    width: calc(100% - 401px);
+}
+#right #search #searchRight p:first-child {
+    float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+#right #search #searchRight p:first-child span {
+    display: inline-block;
+    margin-left: 10px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: rgb(27, 185, 52);
+}
+#right #search #searchRight #button {
+    float: right;
+    font-size: 0;
+}
+#right #search #searchRight #button img {
+    padding: 5px;
+    border: 1px solid rgb(206, 208, 218);
+    background: linear-gradient(to bottom, white, rgb(242, 244, 247));
+}
+#right #search #searchRight #button img:nth-child(2) {
+    height: 16px;
+    border-left: none;
+    border-right: none;
+}
+#right #search #searchRight #button p:nth-child(2) {
+    float: right;
+    margin-left: 20px;
+    margin-top: 22px;
+    padding-left: 20px;
+    border-left: 1px solid rgb(240, 241, 244);
+    font-size: 16px;
+    color: rgb(86, 104, 138);
+}
+#right #chat {
+    width: 100%;
+    height: calc(100% - 150px);
+}
+#right #chat #chatLeft {
+    overflow: scroll;
+    float: left;
+    margin: 0;
+    width: 400px;
+    height: 100%;
+    border-right: 1px solid rgb(230, 233, 236);
+}
+#right #chat #chatLeft div {
+    padding: 20px;
+    border-bottom: 1px solid rgb(230, 233, 236);
+    height: 80px;
+}
+#right #chat #chatLeft div img {
+    float: left;
+}
+#right #chat #chatLeft div h2 {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 20px;
+    margin-bottom: 0;
+    width: 200px;
+    font-size: 16px;
+    color: rgb(88, 93, 104);
+}
+#right #chat #chatLeft div p {
+    margin-top: 15px;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box; /** 将对象作为伸缩盒子模型显示 **/
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 2; /** 显示的行数 **/
+    overflow: hidden; 
+    width: 350px;
+    font-size: 12px;
+    color: rgb(110, 115, 124);
+}
+#right #chat #chatLeft div .Twitter {
+    margin-right: 100px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: rgb(196, 196, 196);
+}
+#right #chat #chatLeft div .Time {
+    float: right;
+    font-size: 14px;
+    color: rgb(161, 173, 188);
+}
+#right #chat #chatRight {
+    overflow: scroll;
+    width: calc(100% - 401px);
+    height: 100%;
+}
+#right #chat #chatRight .dayChat {
+    padding: 20px;
+    border-bottom: 1px solid rgb(230, 233, 236);
+}
+#right #chat #chatRight img {
+    float: left;
+}
+#right #chat #chatRight .Time {
+    float: right;
+    margin: 0;
+    margin-right: 150px;
+    font-size: 14px;
+    color: rgb(161, 173, 188);
+}
+#right #chat #chatRight h2 {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 20px;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: rgb(88, 93, 104);
+}
+#right #chat #chatRight .chat {
+    margin-left: 70px;
+    font-size: 12px;
+    color: rgb(110, 115, 124);
+}
+#right #chat #chatRight textarea {
+    margin: 0 auto;
+    width: calc(100% - 50px);
+    height: 50px;
+    border: 1px solid rgb(230, 233, 236);
+    font-size: 12px;
+    color: rgb(110, 115, 124);
+}
+#right #chat #chatRight button {
+    float: left;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgb(230, 233, 236);
+    background: linear-gradient(to bottom, white, rgb(242, 244, 247));
+}
+
+#middle .blue {
+    display: block;
+    float: right;
+    width: 30px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(35, 152, 241);
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+#middle .red {
+    display: block;
+    float: right;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgb(217, 55, 26);
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+#left .choosen {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 8px solid rgb(35, 152, 241);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+#middle #DASHBOARD .choosen {
+    position: absolute;
+    top: 420px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 8px solid rgb(35, 152, 241);
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+#right #chat #chatLeft {
+    position: relative;
+}
+#right #chat #chatLeft .choosen {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    width: 5px;
+    height: 120px;
+    background-color: rgb(35, 152, 241);
+}
