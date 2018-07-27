@@ -1,9 +1,7 @@
-//删除上一个表格
-function toZero(){
-    div.innerHTML = "";
-}
+
 //根据选择获取数据
-function getData(){
+function getData(data){
+    console.log(data)
     var arr = [];
     var arr1 = [];
     var region = [];
@@ -26,8 +24,8 @@ function getData(){
     }
     if(region.length == 0 || goods.length == 0) return;
         for(var i = 0;i < 9;i++){
-            if(region.indexOf(sourceData[i].region) != -1){
-                arr[arrIndex] = sourceData[i];
+            if(region.indexOf(data[i].region) != -1){
+                arr[arrIndex] = data[i];
                 arrIndex++;
             }
         }
@@ -37,11 +35,6 @@ function getData(){
                 arrIndex1++;
             }
         }
-    toZero();
-    newTable(arr1);
-    changeTd();
-    merge(1);
-    console.log(arr1)
     return arr1;
 }
 

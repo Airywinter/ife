@@ -1,4 +1,16 @@
-function newTable(arr){
+//删除上一个表格
+function toZero(){
+    div.innerHTML = "";
+}
+
+function newTable(){
+    toZero();
+    var arr = [];
+    if(typeof localStorage.Data != 'undefined') {
+        arr = getData(JSON.parse(localStorage.Data));
+    }
+    else arr = getData(sourceData);
+    
 //创建table
     var table = document.createElement("table");
     border(table);
@@ -42,6 +54,8 @@ function newTable(arr){
             border(td);
         }
     }
+    changeTd();
+    merge(1);
 }
 
 function border(element){

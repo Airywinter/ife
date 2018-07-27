@@ -39,9 +39,28 @@ function edit(event){
                 return;
             }
             dom.innerHTML = newValue;
-        }
-        
-       
-    }
-   
+            saveData(dom);
+        }               
+    }   
 }
+
+//存储数据的函数；
+function saveData(dom){		
+    //利用localStorage存储数据的函数,初始化savaData的值；
+    var saveData = sourceData;
+    //获取更改后的行的销售数据；
+    var updateSaleArr = [];
+    var tr = dom.parentNode.childNodes;//数组；
+    for (var i = 2; i < tr.length; i++) {
+        updateSaleArr.push(tr[i].innerHTML);
+    }
+    for (var i = 0; i < saveData.length; i++) {
+        if ((saveData[i].region == tr[0].innerHTML && saveData[i].product == tr[1].innerHTML) || 
+            (saveData[i].region == tr[1].innerHTML && saveData[i].product == tr[0].innerHTML)) {
+            sourceData[i].sale = updateSaleArr;
+        }
+    }
+    //localStorage只能存储字符串信息，运用JSON进行转化存储；
+    localStorage.setItem('Data',JSON.stringify(saveData));			
+}
+
