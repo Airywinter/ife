@@ -1,5 +1,6 @@
 
 function edit(event){
+    
     var dom = event.target;
     var editBtn = document.createElement("button");
     editBtn.innerHTML = "编辑";
@@ -26,23 +27,21 @@ function edit(event){
         cancelBtn.innerHTML = "取消";
         cancelBtn.style.color = "gray";
         dom.appendChild(cancelBtn);
-        inputHtml.onblur = function(e){
-            //绑定失去焦点事件
-            var target = e.target;
-            var newValue = target.value;
+        cancelBtn.onclick = function(){//点击取消时恢复原来数值
+            dom.removeChild(saveBtn);
+            dom.removeChild(cancelBtn);
+            dom.innerHTML = oldValue;
+        }
+        saveBtn.onclick = function(){
+            var newValue = inputHtml.value;
             if(isNaN(newValue) || newValue == ""){
                 alert("请输入数字！");
                 return;
             }
             dom.innerHTML = newValue;
         }
-        cancelBtn.onclick = function(){
-            dom.removeChild(saveBtn);
-            dom.removeChild(cancelBtn);
-        }
-        saveBtn.onclick = function(){
-            
-        }
+        
+       
     }
    
 }
