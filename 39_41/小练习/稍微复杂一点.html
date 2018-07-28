@@ -1,0 +1,53 @@
+<html>
+    <button id="a">A</button>
+    <button id="b">B</button>
+    <button id="c">C</button>
+
+    <button id="d">D</button>
+    <button id="e">E</button>
+    <button id="f">F</button>
+
+
+    <div id="contABC"></div>
+    <div id="contDEF"></div>
+    <script>
+        var contABC = document.querySelector("#contABC");
+        var contDFE = document.querySelector("#contDFE");
+        var btn = document.querySelectorAll("button");
+        var str = [];
+        for(let i = 0; i < 3;i++){
+            str[i] = location.hash[i];
+        }
+        console.log(str)
+        var index = 0;
+            for(let i = 0;i < 3;i++){
+                btn[i].onclick = function(){
+                    str[1] = event.target.innerHTML;
+                    location.hash = str.join("");
+                    render();
+                }
+            }
+            for(let i = 3;i < btn.length;i++){
+                btn[i].onclick = function(){
+                    index = 1;
+                    str[2] = event.target.innerHTML;
+                    location.hash = str.join("");
+                    render();
+                }
+            }
+        function render(){
+            if(location.hash.length == 2 && index == 1){
+                contDEF.innerHTML = location.hash[1];
+            }
+            else if(location.hash.length == 2 && index == 0){
+                contABC.innerHTML = location.hash[1];
+            }
+            else {
+                contABC.innerHTML = location.hash[1];
+                contDEF.innerHTML = location.hash[2];
+            }
+            
+        }
+        window.onhashchange = render();
+    </script>
+</html>
